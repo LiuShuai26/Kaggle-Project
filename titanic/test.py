@@ -3,6 +3,6 @@ import numpy as np
 from pandas import Series, DataFrame
 
 
-data_train = pd.read_csv("train.csv")
+train_df = pd.read_csv("train.csv")
 # print(data_train.info())
-print(data_train.describe())
+print(train_df[['SibSp', 'Survived']].groupby(['SibSp'], as_index=False).mean())
